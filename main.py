@@ -44,10 +44,10 @@ class ChatGPT:
     def __init__(self):
         self.prompt = Prompts()
         self.model = os.getenv("OPENAI_MODEL", default = "text-davinci-003")
-        self.temperature = float(os.getenv("OPENAI_TEMPERATURE", default = 0))
+        self.temperature = float(os.getenv("OPENAI_TEMPERATURE", default = 0.9))
         self.frequency_penalty = float(os.getenv("OPENAI_FREQUENCY_PENALTY", default = 0))
         self.presence_penalty = float(os.getenv("OPENAI_PRESENCE_PENALTY", default = 0.6))
-        self.max_tokens = int(os.getenv("OPENAI_MAX_TOKENS", default = 240)) #You can change here to decide the characer number AI gave you.
+        self.max_tokens = int(os.getenv("OPENAI_MAX_TOKENS", default = 2400)) #You can change here to decide the characer number AI gave you.
 	
     def get_response(self):
         response = openai.Completion.create(
